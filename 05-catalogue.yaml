@@ -51,15 +51,14 @@
     package:
       name: mongodb-mongosh
       state: present       
-  - name: check catalogue schema exits or not
+  - name: check catalogue schema exist ot not
     shell: mongosh --host "{{ MONGODB_HOST }}" --eval 'db.getMongo().getDBNames().indexOf("catalogue")'
     register: catalogue_output
     tags:
-      - mongoodb
+    - mongodb
   - name: print catalogue_output
     debug: 
-      msg: "{{ catalogue_output }}" 
+      msg: "{{ catalogue_output }}"
     tags:
-      - mongoodb       
-
+    - mongodb
           
