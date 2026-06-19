@@ -54,7 +54,12 @@
   - name: check catalogue schema exits or not
     shell: mongosh --host mongodb.lpdaws.online --eval 'db.getMongo().getDBNames().indexOf("catalogue"
     register: catalogue_output
+    tags:
+      - mongoodb
   - name: print catalogue_output
-    debg: "{{ catalogue_output }}"      
+    debg: 
+      msg: "{{ catalogue_output }}" 
+    tags:
+      - mongoodb       
 
           
