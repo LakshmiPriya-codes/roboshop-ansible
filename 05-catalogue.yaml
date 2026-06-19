@@ -57,7 +57,7 @@
     tags:
       - mongoodb
   - name: print catalogue_output
-    debg: 
+    debug: 
       msg: "{{ catalogue_output }}" 
     tags:
       - mongoodb       
