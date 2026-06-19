@@ -4,26 +4,26 @@
   tasks:
    - name: copy rabbitmq repo
      copy:   
-     src: rabbitmq.repo
-     dest: /etc/yum.repos.d/rabbitmq.repo
+       src: rabbitmq.repo
+       dest: /etc/yum.repos.d/rabbitmq.repo
    - name: insatll rabbitmq server
      package:
-      name: rabbitmq-server
-      state: present 
+        name: rabbitmq-server
+        state: present 
    - name: start and enable rabbitmq server
      service:
-      name: rabbitmq-server
-      state: start
-      enabled: yes
+        name: rabbitmq-server
+        state: start
+        enabled: yes
    - name: create roboshop mq user
      community.rabbitmq.rabbitmq_user:
-      user: roboshop
-      password: roboshop123
-      permissions:
-        - vhost: /
-          configure_priv: .*
-          read_priv: .*
-          write_priv: .*
-      state: present   
+        user: roboshop
+        password: roboshop123
+        permissions:
+          - vhost: /
+            configure_priv: .*
+            read_priv: .*
+            write_priv: .*
+        state: present   
 
 
