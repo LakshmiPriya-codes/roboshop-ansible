@@ -55,71 +55,12 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # - name: configure user server
 #   hosts: user
 #   connection: local
 #   become: yes
 #   tasks:
-#    - name: enable user module
+#    - name: enable user module 20
 #      command: dnf module enable nodejs:20 -y
 #    - name: install nodejs
 #      package:
