@@ -1,5 +1,5 @@
-- name: configuring rabbitmq server
-  hosts: rabbitmq
+- name: configuring catalogue server
+  hosts: catalogue
   become: yes
   tasks:
   - name: enable nodejs 20
