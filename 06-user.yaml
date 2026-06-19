@@ -30,12 +30,13 @@
       state: directory
    - name: download user 
      get_url:
-        url: https://roboshop-artifacts.s3.amazonaws.com/catalogue-v3.zip 
+        url: https://roboshop-artifacts.s3.amazonaws.com/user-v3.zip 
         dest:  /tmp/user.zip
    - name: unzip user
      unarchive:
         src: /tmp/user.zip
         dest: /app
+        remote_src: yes
    - name: install dependencies
      community.general.npm:
         path: /app
@@ -45,13 +46,13 @@
       dest: /etc/systemd/system/user.service
    - name: deamon reload
      systemd_service:
-      name: user
-      daemon_reload: true
+        name: user
+        daemon_reload: true
    - name: enable and restart user
      service:
-      name: user
-      state: restarted
-      enabled: yes        
+        name: user
+        state: restarted
+        enabled: yes        
 
 
 
