@@ -1,4 +1,4 @@
-- name: configuring mongodb server
+- name: configuring redis server
   hosts: redis
   become: yes
   tasks:
@@ -20,7 +20,7 @@
       line: 'protected-mode no'
   - name: start and enable redis
     service:
-       name: mongod
+       name: redis
        state: started
        enabled: yes  
           
