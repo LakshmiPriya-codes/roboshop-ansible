@@ -1,5 +1,5 @@
 - name: configure user server
-  hosts: local
+  hosts: user
   connection: local
   become: yes
   tasks:
@@ -26,19 +26,19 @@
       state: absent   
    - name: create app directory
      file:
-     path: /app
-     state: directory
+      path: /app
+      state: directory
    - name: download user 
      get_url:
-     src: https://roboshop-artifacts.s3.amazonaws.com/catalogue-v3.zip 
-     dest:  /tmp/user.zip
+        src: https://roboshop-artifacts.s3.amazonaws.com/catalogue-v3.zip 
+        dest:  /tmp/user.zip
    - name: unzip user
      unarchive:
-     src: /tmp/user.zip
-     dest: /app
+        src: /tmp/user.zip
+        dest: /app
    - name: install dependencies
      community.general.npm:
-      path: /app
+        path: /app
    - name: copy user service
      template:
       src: user.service.j2
