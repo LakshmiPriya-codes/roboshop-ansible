@@ -4,7 +4,7 @@
   become: yes
   task: 
   - name: install python
-     package:
+    package:
      name: "{{ iem }}"
      state: present
      loop:
@@ -19,7 +19,7 @@
       shell: /sbin/nologin
       comment: "Roboshop System user"
   - name: remove app directory
-  
+
     file:
       path: /app
       state: absent
