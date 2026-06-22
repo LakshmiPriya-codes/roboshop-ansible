@@ -2,7 +2,7 @@
   hosts: payment 
   connection: payment
   become: yes
-  task: 
+  tasks: 
   - name: install python
     package:
      name: "{{ iem }}"
