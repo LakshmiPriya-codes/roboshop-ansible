@@ -4,6 +4,7 @@
   tasks:
   - name: install maven
     package:
+      name: maven
       state: present
   - name: create roboshop system user
     user:
