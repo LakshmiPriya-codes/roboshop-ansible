@@ -49,6 +49,10 @@
     template:
       src: shipping.service.j2
       dest: /etc/systemd/system/shipping.service
+  - name: install python dependencies
+    pip:
+      name: PyMySQL
+      executable: pip3.9    
   - name: load mysql data
     community.mysql.mysql_db:
       state: import
@@ -61,7 +65,7 @@
     - /app/db/schema.sql
     - /app/db/app-user.sql 
     - /app/db/master-data.sql
-    
+
   # - name: deamon reload
   #   systemd_service:
   #     name: shipping
